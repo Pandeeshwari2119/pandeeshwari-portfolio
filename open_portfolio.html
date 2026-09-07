@@ -255,10 +255,13 @@
 
       <!-- Desktop Action CTAs -->
       <div class="nav-actions flex items-center gap-2.5">
+        <button onclick="openResumeModal()" class="btn-primary" style="padding: 0.45rem 0.95rem; font-size: 0.8rem; background: linear-gradient(135deg, #06B6D4, #2563EB); font-weight: 700; display: inline-flex; align-items: center; gap: 0.35rem;">
+          📄 Resume
+        </button>
         <button onclick="copyEmail()" class="btn-secondary" style="padding: 0.45rem 0.8rem; font-size: 0.8rem; font-family: 'Fira Code', monospace;">
           📋 Copy Email
         </button>
-        <a href="#contact" class="btn-primary" style="padding: 0.45rem 0.95rem; font-size: 0.8rem;">
+        <a href="#contact" class="btn-secondary" style="padding: 0.45rem 0.95rem; font-size: 0.8rem;">
           Hire Me
         </a>
       </div>
@@ -278,13 +281,18 @@
       <a href="#skills" onclick="toggleMobileMenu()"><span>⚡ Skills & Tech</span> <span>➔</span></a>
       <a href="#education" onclick="toggleMobileMenu()"><span>🎓 Education & Degrees</span> <span>➔</span></a>
       <a href="#contact" onclick="toggleMobileMenu()"><span>📬 Contact Me</span> <span>➔</span></a>
-      <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">
-        <a href="#contact" onclick="toggleMobileMenu()" class="btn-primary" style="flex: 1; text-align: center; text-decoration: none; font-size: 0.85rem;">
-          Get In Touch
-        </a>
-        <button onclick="copyEmail(); toggleMobileMenu();" class="btn-secondary" style="flex: 1; font-size: 0.85rem;">
-          📋 Copy Email
+      <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem; flex-direction: column;">
+        <button onclick="openResumeModal(); toggleMobileMenu();" class="btn-primary" style="width: 100%; font-size: 0.85rem; background: linear-gradient(135deg, #06B6D4, #2563EB); text-align: center; padding: 0.65rem;">
+          📄 View / Download Resume
         </button>
+        <div style="display: flex; gap: 0.5rem;">
+          <a href="#contact" onclick="toggleMobileMenu()" class="btn-secondary" style="flex: 1; text-align: center; text-decoration: none; font-size: 0.85rem;">
+            Get In Touch
+          </a>
+          <button onclick="copyEmail(); toggleMobileMenu();" class="btn-secondary" style="flex: 1; font-size: 0.85rem;">
+            📋 Copy Email
+          </button>
+        </div>
       </div>
     </div>
   </nav>
@@ -315,7 +323,10 @@
 
           <!-- Hero Action Buttons -->
           <div class="hero-buttons flex items-center gap-3" style="flex-wrap: wrap; margin-bottom: 2rem;">
-            <a href="#projects" class="btn-primary">
+            <button onclick="openResumeModal()" class="btn-primary" style="background: linear-gradient(135deg, #06B6D4, #2563EB); font-weight: 700; display: inline-flex; align-items: center; gap: 0.4rem;">
+              📄 View Resume
+            </button>
+            <a href="#projects" class="btn-secondary">
               Explore Projects ➔
             </a>
             <a href="#patents" class="btn-secondary">
@@ -924,6 +935,46 @@
     </div>
   </footer>
 
+  <!-- Resume Viewer Modal with Instant Download -->
+  <div id="resume-modal" class="modal-backdrop" onclick="closeResumeModal()">
+    <div class="modal-content" style="max-width: 850px; width: 95%; max-height: 92vh; display: flex; flex-direction: column;" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeResumeModal()">✕</button>
+      
+      <div class="flex items-center justify-between" style="flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1rem; padding-right: 2.5rem;">
+        <div>
+          <div class="pill-badge" style="color: #38BDF8; margin-bottom: 0.35rem;">📄 CURRICULUM VITAE</div>
+          <h2 style="font-size: 1.35rem; font-weight: 800; color: #FFF; margin: 0;">Pandeeshwari M — Official Resume</h2>
+        </div>
+        
+        <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
+          <a href="resume.pdf" download="Pandeeshwari_M_Resume.pdf" class="btn-primary" style="padding: 0.5rem 1.15rem; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 0.4rem; text-decoration: none; background: linear-gradient(135deg, #10B981, #06B6D4); font-weight: 700;">
+            📥 Download Resume (PDF)
+          </a>
+          <a href="resume.pdf" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="padding: 0.5rem 0.95rem; font-size: 0.85rem; text-decoration: none;">
+            ↗ Open in Tab
+          </a>
+        </div>
+      </div>
+
+      <!-- Embedded PDF Preview -->
+      <div style="flex: 1; min-height: 58vh; background: #070A11; border: 1px solid var(--border-color); border-radius: 1rem; overflow: hidden; position: relative;">
+        <iframe src="resume.pdf#toolbar=0" style="width: 100%; height: 58vh; border: none; display: block;" title="Pandeeshwari M Resume"></iframe>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; border-top: 1px solid var(--border-color); padding-top: 0.75rem; flex-wrap: wrap; gap: 0.5rem;">
+        <span style="font-size: 0.75rem; color: #94A3B8; font-family: 'Fira Code', monospace;">B.E. CSE • 2023 – 2027</span>
+        <div style="display: flex; gap: 0.5rem;">
+          <a href="resume.pdf" download="Pandeeshwari_M_Resume.pdf" class="btn-primary" style="padding: 0.45rem 1rem; font-size: 0.8rem; text-decoration: none;">
+            📥 Download PDF
+          </a>
+          <button onclick="closeResumeModal()" class="btn-secondary" style="padding: 0.45rem 1rem; font-size: 0.8rem;">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Detail Modal -->
   <div id="detail-modal" class="modal-backdrop" onclick="closeModal()">
     <div class="modal-content" onclick="event.stopPropagation()">
@@ -953,13 +1004,21 @@
 
   <!-- Interactive Scripts -->
   <script>
-    // 1. Mobile Menu Toggle
+    // 1. Resume Modal Handlers
+    function openResumeModal() {
+      document.getElementById("resume-modal").style.display = "flex";
+    }
+    function closeResumeModal() {
+      document.getElementById("resume-modal").style.display = "none";
+    }
+
+    // 2. Mobile Menu Toggle
     function toggleMobileMenu() {
       const drawer = document.getElementById("mobile-drawer");
       drawer.classList.toggle("open");
     }
 
-    // 2. Typing animation in Hero
+    // 3. Typing animation in Hero
     const roles = [
       "Computer Science Engineer",
       "Full Stack React Developer",
