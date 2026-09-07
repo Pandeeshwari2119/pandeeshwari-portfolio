@@ -117,7 +117,7 @@ export const portfolioData = {
       ],
       techStack: ["React.js", "JavaScript", "HTML", "CSS", "Responsive UI", "Database"],
       githubUrl: "https://github.com/Pandeeshwari2119",
-      liveUrl: "#",
+      liveUrl: "https://your-kitchen-companion.netlify.app/",
       featured: true,
       gradient: "from-cyan-500/20 via-blue-500/10 to-transparent"
     },
@@ -138,7 +138,7 @@ export const portfolioData = {
       ],
       techStack: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "REST APIs"],
       githubUrl: "https://github.com/Pandeeshwari2119",
-      liveUrl: "#",
+      liveUrl: "https://nourish360-1.onrender.com/",
       featured: true,
       gradient: "from-emerald-500/20 via-teal-500/10 to-transparent"
     },
