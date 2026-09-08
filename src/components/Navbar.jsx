@@ -91,7 +91,7 @@ export default function Navbar({ activeSection, currentTheme, setCurrentTheme })
           })}
         </nav>
 
-        {/* Right Actions: Mood Palette + Socials + CTA */}
+        {/* Right Actions: Mood Palette */}
         <div className="hidden sm:flex items-center gap-2.5">
           {/* Theme Palette Switcher */}
           <div className="relative">
@@ -135,35 +135,6 @@ export default function Navbar({ activeSection, currentTheme, setCurrentTheme })
               </div>
             )}
           </div>
-
-          {/* Social Quick Icons */}
-          <a
-            href={portfolioData.personal.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-2 rounded-xl bg-dark-900/80 border border-slate-800 hover:border-slate-700 text-slate-400 hover:text-white transition-colors"
-            title="GitHub Profile"
-          >
-            <Github className="w-4 h-4" />
-          </a>
-          <a
-            href={portfolioData.personal.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-2 rounded-xl bg-dark-900/80 border border-slate-800 hover:border-slate-700 text-slate-400 hover:text-cyan-400 transition-colors"
-            title="LinkedIn Profile"
-          >
-            <Linkedin className="w-4 h-4" />
-          </a>
-
-          {/* Contact CTA */}
-          <a
-            href="#contact"
-            className="px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-semibold text-xs transition-all shadow-md shadow-cyan-500/20 hover:shadow-cyan-500/40 hover:-translate-y-0.5 flex items-center gap-1.5"
-          >
-            <Mail className="w-3.5 h-3.5 text-slate-950" />
-            <span>Hire Me</span>
-          </a>
         </div>
 
         {/* Mobile Menu Button */}
@@ -208,34 +179,6 @@ export default function Navbar({ activeSection, currentTheme, setCurrentTheme })
                 </a>
               );
             })}
-          </div>
-
-          <div className="pt-4 flex items-center justify-between border-t border-slate-800/80">
-            <div className="flex items-center gap-3">
-              <a
-                href={portfolioData.personal.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2.5 rounded-xl bg-dark-900 border border-slate-800 text-slate-400 hover:text-white"
-              >
-                <Github className="w-4 h-4" />
-              </a>
-              <a
-                href={portfolioData.personal.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2.5 rounded-xl bg-dark-900 border border-slate-800 text-slate-400 hover:text-cyan-400"
-              >
-                <Linkedin className="w-4 h-4" />
-              </a>
-            </div>
-            <a
-              href="#contact"
-              onClick={() => setMobileMenuOpen(false)}
-              className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-dark-950 font-bold text-xs"
-            >
-              Get in Touch
-            </a>
           </div>
         </div>
       )}

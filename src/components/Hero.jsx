@@ -99,13 +99,6 @@ export default function Hero({ currentThemePreset, onOpenResumeModal }) {
               <Award className="w-4 h-4 text-amber-400" />
               <span>View Patents (2)</span>
             </a>
-
-            <a
-              href="#contact"
-              className="px-5 py-3.5 rounded-xl bg-slate-800/40 hover:bg-slate-800/80 border border-slate-800 text-slate-300 hover:text-white text-sm font-medium transition-all"
-            >
-              Contact Me
-            </a>
           </div>
 
           {/* Key Metric Highlights */}

@@ -86,7 +86,7 @@ export default function Contact() {
                   href={personal.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-3.5 py-1.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-dark-950 font-bold text-xs flex items-center gap-1.5 transition-colors shadow-md"
+                  className="px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-dark-950 font-bold text-xs flex items-center gap-1.5 transition-colors shadow-md"
                 >
                   <span>Chat on WhatsApp</span>
                   <span>➔</span>
@@ -94,46 +94,34 @@ export default function Contact() {
               </div>
 
               <div>
-                <div className="text-xs font-mono text-emerald-400">WhatsApp / Direct Phone</div>
-                <a 
-                  href={personal.whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-base sm:text-lg font-bold text-white hover:text-emerald-400 transition-colors font-mono"
-                >
-                  {personal.phone}
-                </a>
+                <div className="text-xs font-mono text-emerald-400">Instant Messaging</div>
+                <div className="text-sm font-semibold text-slate-300 mt-1">
+                  Connect quickly for real-time collaboration and inquiries.
+                </div>
               </div>
             </div>
 
             {/* Direct Email Card */}
-            <div className="glass-card rounded-3xl p-6 sm:p-7 border border-slate-800 space-y-5">
+            <div className="glass-card rounded-3xl p-6 sm:p-7 border border-slate-800 space-y-4">
               <div className="flex items-center justify-between">
                 <div className="p-3 rounded-2xl bg-cyan-500/10 text-cyan-400">
                   <Mail className="w-6 h-6" />
                 </div>
-                <button
-                  onClick={handleCopyEmail}
-                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-dark-950 border border-slate-700/80 hover:border-cyan-500/50 text-xs font-mono text-slate-300 hover:text-cyan-300 transition-all"
-                >
-                  {copied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
-                  <span>{copied ? 'Copied to Clipboard!' : 'Copy Email'}</span>
-                </button>
-              </div>
-
-              <div>
-                <div className="text-xs font-mono text-slate-400">Primary Email</div>
-                <a 
+                <a
                   href={`mailto:${personal.email}`}
-                  className="text-base sm:text-lg font-bold text-white hover:text-cyan-400 transition-colors break-all"
+                  className="px-4 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-dark-950 font-bold text-xs flex items-center gap-1.5 transition-colors shadow-md"
                 >
-                  {personal.email}
+                  <span>Compose Email</span>
+                  <span>➔</span>
                 </a>
               </div>
 
-              <p className="text-xs text-slate-400">
-                Direct inbox access with prompt responses for job opportunities and project queries.
-              </p>
+              <div>
+                <div className="text-xs font-mono text-slate-400">Official Communication</div>
+                <div className="text-sm font-semibold text-slate-300 mt-1">
+                  Direct inbox access for job opportunities and project queries.
+                </div>
+              </div>
             </div>
 
             {/* Social & Networking Cards */}
